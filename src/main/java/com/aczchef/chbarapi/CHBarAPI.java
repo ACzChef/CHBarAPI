@@ -1,5 +1,6 @@
 package com.aczchef.chbarapi;
 
+import com.aczchef.aczextension.LogUtils;
 import com.laytonsmith.core.extensions.AbstractExtension;
 import com.laytonsmith.core.extensions.MSExtension;
 
@@ -9,13 +10,14 @@ import com.laytonsmith.core.extensions.MSExtension;
  */
 @MSExtension("CHBarApi")
 public class CHBarAPI extends AbstractExtension {
+    
     @Override
     public void onStartup() {
-        System.out.println("[CommandHelper] CHBarAPI: Initialized - ACzChef");
+        LogUtils.initMessage(this.getName());
     }
     
     @Override
     public void onShutdown() {
-        System.out.println("[CommandHelper] CHBarAPI: De-Initialized - ACzChef");
+        LogUtils.deInitMessage(this.getName());
     }
 }
