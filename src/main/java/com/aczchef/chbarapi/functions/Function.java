@@ -58,7 +58,7 @@ public class Function {
 		    break;
 	    }
 	    BarAPI.setMessage(((BukkitMCPlayer)p)._Player(), message, percent);
-	    return new CVoid(t);
+	    return CVoid.VOID;
 	}
 
 	public String getName() {
@@ -111,7 +111,7 @@ public class Function {
 		    break;
 	    }
 	    BarAPI.setMessage(((BukkitMCPlayer)p)._Player(), message, seconds);
-	    return new CVoid(t);
+	    return CVoid.VOID;
 	}
 
 	public String getName() {
@@ -197,7 +197,7 @@ public class Function {
 	    }
 	    
 	    BarAPI.removeBar(((BukkitMCPlayer)p)._Player());
-	    return new CVoid(t);
+	    return CVoid.VOID;
 	}
 
 	public String getName() {
@@ -243,7 +243,7 @@ public class Function {
 		percent = Static.getDouble32(args[0], t);
 	    }
 	    BarAPI.setHealth(((BukkitMCPlayer)p)._Player(), percent);
-	    return new CVoid(t);
+	    return CVoid.VOID;
 	}
 
 	public String getName() {

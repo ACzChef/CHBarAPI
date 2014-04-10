@@ -10,7 +10,7 @@ import com.laytonsmith.core.extensions.MSExtension;
  * @author cgallarno
  */
 @MSExtension("CHBarApi")
-public class CHBarAPI extends AbstractExtension {
+public class LifeCycle extends AbstractExtension {
     
     @Override
     public void onStartup() {
@@ -23,6 +23,6 @@ public class CHBarAPI extends AbstractExtension {
     }
 
     public Version getVersion() {
-	return new SimpleVersion(1, 1, 0);
+	return new SimpleVersion(1, 2, 0);
     }
 }
