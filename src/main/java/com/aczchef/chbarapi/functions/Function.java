@@ -154,7 +154,7 @@ public class Function {
 		p = Static.GetPlayer(args[0].val(), t);
 	    }
 	    
-	    return new CBoolean(BarAPI.hasBar(((BukkitMCPlayer)p)._Player()), t);
+	    return CBoolean.get( BarAPI.hasBar((( BukkitMCPlayer )p)._Player() ));
 	}
 
 	public String getName() {
