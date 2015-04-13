@@ -2,7 +2,7 @@ package com.aczchef.chbarapi.functions;
 
 import com.laytonsmith.PureUtilities.Version;
 import com.laytonsmith.abstraction.MCPlayer;
-import com.laytonsmith.abstraction.bukkit.BukkitMCPlayer;
+import com.laytonsmith.abstraction.bukkit.entities.BukkitMCPlayer;
 import com.laytonsmith.annotations.api;
 import com.laytonsmith.core.CHVersion;
 import com.laytonsmith.core.Static;
@@ -235,7 +235,7 @@ public class Function {
 
 	public Construct exec(Target t, Environment environment, Construct... args) throws ConfigRuntimeException {
 	    MCPlayer p = environment.getEnv(CommandHelperEnvironment.class).GetPlayer();
-	    float percent = 100F;
+	    float percent;
 	    if (args.length == 2) {
 		p = Static.GetPlayer(args[0].val(), t);
 		percent = Static.getDouble32(args[1], t);
