@@ -12,10 +12,12 @@ import com.laytonsmith.core.constructs.Construct;
 import com.laytonsmith.core.constructs.Target;
 import com.laytonsmith.core.environments.CommandHelperEnvironment;
 import com.laytonsmith.core.environments.Environment;
+import com.laytonsmith.core.exceptions.CRE.CRECastException;
+import com.laytonsmith.core.exceptions.CRE.CREPlayerOfflineException;
+import com.laytonsmith.core.exceptions.CRE.CRERangeException;
+import com.laytonsmith.core.exceptions.CRE.CREThrowable;
 import com.laytonsmith.core.exceptions.ConfigRuntimeException;
 import com.laytonsmith.core.functions.AbstractFunction;
-import com.laytonsmith.core.functions.Exceptions;
-import com.laytonsmith.core.functions.Exceptions.ExceptionType;
 import me.confuser.barapi.BarAPI;
 
 /**
@@ -27,8 +29,8 @@ public class Function {
     @api
     public static class set_bar_message extends AbstractFunction {
 
-	public Exceptions.ExceptionType[] thrown() {
-	    return new Exceptions.ExceptionType[] {ExceptionType.CastException, ExceptionType.PlayerOfflineException, ExceptionType.RangeException};
+	public Class<? extends CREThrowable>[] thrown() {
+	    return new Class[] {CRECastException.class, CREPlayerOfflineException.class, CRERangeException.class};
 	}
 
 	public boolean isRestricted() {
@@ -70,8 +72,9 @@ public class Function {
 	}
 
 	public String docs() {
-	    return "void {[player] message | player message [percent]} Sets a boss bar with a message for the given player. If no player is given it defaults to the running player. " + 
-		    "Percent can be set to speify how much to fill up the bar from 0 - 100.";
+	    return "void {[player] message | player message [percent]} Sets a boss bar with a message for the given player."
+				+ " If no player is given it defaults to the running player. "
+				+ "Percent can be set to specify how much to fill up the bar from 0 - 100.";
 	}
 
 	public Version since() {
@@ -83,8 +86,8 @@ public class Function {
     @api
     public static class set_timed_bar_message extends AbstractFunction {
 
-	public Exceptions.ExceptionType[] thrown() {
-	    return new Exceptions.ExceptionType[] {ExceptionType.CastException, ExceptionType.PlayerOfflineException};
+	public Class<? extends CREThrowable>[] thrown() {
+	    return new Class[] {CRECastException.class, CREPlayerOfflineException.class};
 	}
 
 	public boolean isRestricted() {
@@ -136,8 +139,8 @@ public class Function {
     @api
     public static class phas_bar extends AbstractFunction {
 
-	public Exceptions.ExceptionType[] thrown() {
-	    return new Exceptions.ExceptionType[] {ExceptionType.PlayerOfflineException};
+	public Class<? extends CREThrowable>[] thrown() {
+	    return new Class[] {CREPlayerOfflineException.class};
 	}
 
 	public boolean isRestricted() {
@@ -178,8 +181,8 @@ public class Function {
     @api
     public static class premove_bar extends AbstractFunction {
 
-	public Exceptions.ExceptionType[] thrown() {
-	    return new Exceptions.ExceptionType[] {ExceptionType.PlayerOfflineException};
+	public Class<? extends CREThrowable>[] thrown() {
+	    return new Class[] {CREPlayerOfflineException.class};
 	}
 
 	public boolean isRestricted() {
@@ -221,8 +224,8 @@ public class Function {
     @api
     public static class set_bar_health extends AbstractFunction {
 
-	public Exceptions.ExceptionType[] thrown() {
-	    return new Exceptions.ExceptionType[] {ExceptionType.CastException, ExceptionType.PlayerOfflineException, ExceptionType.RangeException};
+	public Class<? extends CREThrowable>[] thrown() {
+	    return new Class[] {CRECastException.class, CREPlayerOfflineException.class, CRERangeException.class};
 	}
 
 	public boolean isRestricted() {
